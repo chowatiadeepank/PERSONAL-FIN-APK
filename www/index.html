@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1B2420">
+<title>Personal Finance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <header class="top">
+    <p class="eyebrow" id="dateLine">—</p>
+    <h1 id="greetTitle">Personal Finance</h1>
+    <div class="networth-card">
+      <div class="label">Net worth</div>
+      <div class="value" id="netWorthVal">₹0</div>
+      <div class="networth-grid">
+        <div><div class="k">Cash</div><div class="v" id="sumCash">₹0</div></div>
+        <div><div class="k">Investments</div><div class="v" id="sumInv">₹0</div></div>
+        <div><div class="k">Liabilities</div><div class="v" id="sumLiab" style="color:var(--debit)">₹0</div></div>
+      </div>
+    </div>
+  </header>
+
+<main>
+
+    <section class="section active" id="sec-dashboard">
+      <div id="upcomingWrap"></div>
+      <h2 class="section-title">Overview</h2>
+      <div class="stat-grid" id="overviewGrid"></div>
+      <h2 class="section-title">Recent activity <small id="txCount">0 entries</small></h2>
+      <div id="recentList"></div>
+    </section>
+</main>
+<button class="fab" id="fabAdd" aria-label="Add">+</button>
+
+  <nav class="bottom">
+    <a class="nav-link" href="dashboard.html"><span class="ic">◈</span>Home</a>
+    <a class="nav-link" href="accounts.html"><span class="ic">▤</span>Accounts</a>
+    <a class="nav-link" href="investments.html"><span class="ic">◇</span>Invest</a>
+    <a class="nav-link" href="investment-ledger.html"><span class="ic">▥</span>Ledger</a>
+    <a class="nav-link" href="loans.html"><span class="ic">⚖</span>Loans</a>
+    <a class="nav-link" href="more.html"><span class="ic">☰</span>More</a>
+  </nav>
+
+<div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
+</div>
+<script src="storage.js"></script>
+</body>
+</html>

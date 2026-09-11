@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1B2420">
+<title>Personal Finance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <header class="top">
+    <p class="eyebrow" id="dateLine">—</p>
+    <h1 id="greetTitle">Personal Finance</h1>
+    <div class="networth-card">
+      <div class="label">Net worth</div>
+      <div class="value" id="netWorthVal">₹0</div>
+      <div class="networth-grid">
+        <div><div class="k">Cash</div><div class="v" id="sumCash">₹0</div></div>
+        <div><div class="k">Investments</div><div class="v" id="sumInv">₹0</div></div>
+        <div><div class="k">Liabilities</div><div class="v" id="sumLiab" style="color:var(--debit)">₹0</div></div>
+      </div>
+    </div>
+  </header>
+
+<main>
+
+    <section class="section active" id="sec-settings">
+      <span class="backlink"><a href="more.html">← More</a></span>
+      <h2 class="section-title">Settings</h2>
+      <div class="card">
+        <h4>Project</h4>
+        <p>Personal Finance — your data is stored on this device's local storage by default. Nothing leaves this device unless you connect a Google Sheet below.</p>
+      </div>
+
+      <div class="card">
+        <h4>Display</h4>
+        <p>Choose how the app lays itself out. "Auto" follows your screen size; the other two let you force a layout regardless of screen size.</p>
+        <div class="seg wrap-seg" id="fViewMode">
+          <button type="button" data-v="auto">Auto</button>
+          <button type="button" data-v="desktop">Big screen</button>
+          <button type="button" data-v="mobile">Phone</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h4>Google Sheet sync <span style="font-weight:400;color:var(--ink-soft)">(optional)</span></h4>
+        <p>Paste the web app link from your own Google Apps Script project below. Once connected, every change you make here saves to that Google Sheet automatically in the background — no buttons to press. Opening the app on another device pulls the latest copy down automatically too.</p>
+        <div class="field"><label>Apps Script web app link</label><input id="fSyncUrl" type="url" placeholder="https://script.google.com/macros/s/…/exec"></div>
+        <label class="checkline"><input type="checkbox" id="fSyncEnabled" checked> Auto-sync in the background</label>
+        <div class="row-actions">
+          <button class="btn secondary" id="btnSyncSave">Save link</button>
+          <button class="btn secondary" id="btnSyncTest">Test connection</button>
+        </div>
+        <p class="hint" id="syncStatusText">Not connected — data stays on this device only.</p>
+      </div>
+
+      <div class="card">
+        <h4>Local backup file</h4>
+        <p>Download everything as a single file you can keep safe or move to another device — works whether or not Google Sheet sync is on.</p>
+        <button class="btn secondary" id="btnBackup">Export backup (.json)</button>
+      </div>
+      <div class="card">
+        <h4>Restore</h4>
+        <p>Load a previously exported backup file. This replaces all current data on this device.</p>
+        <input type="file" id="restoreFile" accept="application/json" style="display:none">
+        <button class="btn secondary" id="btnRestore">Choose backup file…</button>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--debit)">Delete all data</h4>
+        <p>Permanently erases every account, transaction, debt, investment, loan and recurring entry on this device. This cannot be undone. (If Google Sheet sync is on, it will be pushed there too.)</p>
+        <button class="btn danger" id="btnDeleteAll">Delete all data</button>
+      </div>
+    </section>
+</main>
+<button class="fab" id="fabAdd" aria-label="Add">+</button>
+
+  <nav class="bottom">
+    <a class="nav-link" href="dashboard.html"><span class="ic">◈</span>Home</a>
+    <a class="nav-link" href="accounts.html"><span class="ic">▤</span>Accounts</a>
+    <a class="nav-link" href="investments.html"><span class="ic">◇</span>Invest</a>
+    <a class="nav-link" href="investment-ledger.html"><span class="ic">▥</span>Ledger</a>
+    <a class="nav-link" href="loans.html"><span class="ic">⚖</span>Loans</a>
+    <a class="nav-link" href="more.html"><span class="ic">☰</span>More</a>
+  </nav>
+
+<div class="overlay" id="overlay"><div class="sheet" id="sheet"></div></div>
+</div>
+<script src="storage.js"></script>
+</body>
+</html>

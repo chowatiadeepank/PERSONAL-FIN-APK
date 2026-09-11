@@ -1,0 +1,14 @@
+{
+  "name": "personal-finance-apk",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cordova wrapper that packages the Personal Finance web app as an Android APK.",
+  "scripts": {
+    "android:add": "cordova platform add android",
+    "android:build": "cordova build android"
+  },
+  "devDependencies": {
+    "cordova": "^12.0.0",
+    "cordova-android": "^13.0.0"
+  }
+}
