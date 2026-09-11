@@ -1,12 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.personalfinance.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Personal Finance</name>
-    <description>
-        Personal Finance — accounts, investments, loans, debts and recurring entries, stored on-device with optional Google Sheet backup.
-    </description>
-    <author email="you@example.com" href="https://example.com">
-        You
-    </author>
+    <description>Personal Finance — accounts, investments, loans, debts and recurring entries, stored on-device with optional Google Sheet backup.</description>
+    <author email="you@example.com" href="https://example.com">You</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="*" />
